@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inclure – Cadastro</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="navegacao-completa"></div>
+
+    <div class="auth" style="max-width: 560px">
+      <div class="acesso-box">
+        <h2>Cadastre-se</h2>
+        <div class="campos">
+          <div class="acesso-linha">
+            <input
+              class="campo-input"
+              type="text"
+              placeholder="Nome completo"
+            />
+            <div class="campo" style="flex: 0 0 auto; min-width: 160px">
+              <input class="campo-input" type="date" id="cadastroNascimento" />
+            </div>
+          </div>
+          <div class="genero">   
+            <button class="btn-genero ativo" onclick="selecionarGenero(this)">
+              Masculino
+            </button>
+            <button class="btn-genero" onclick="selecionarGenero(this)">
+              Feminino
+            </button>
+            <button class="btn-genero" onclick="selecionarGenero(this)">
+              Outro
+            </button>
+          </div>
+          <div class="def">
+            <h3>Tipo de usuário</h3>
+            <select class="campo-input seletor" style="width: 100%">
+              <option value="">Selecione seu perfil</option>
+              <option>Usuário neurodivergente</option>
+              <option>Responsável</option>
+              <option>Profissional</option>
+            </select>
+          </div>
+          <div class="def">
+            <h3>Qual a sua neurodivergência?</h3>
+            <select class="campo-input seletor" style="width: 100%">
+              <option>Selecione (opcional)</option>
+              <option>Autismo (TEA)</option>
+              <option>TOC</option>
+              <option>TDAH</option>
+              <option>Dislexia</option>
+              <option>Síndrome de Asperger</option>
+              <option>Discalculia</option>
+              <option>Prefiro não informar</option>
+            </select>
+          </div>
+          <input class="campo-input" type="email" placeholder="Email" />
+          <input class="campo-input" type="password" placeholder="Senha" />
+          <input
+            class="campo-input"
+            type="password"
+            placeholder="Confirmar senha"
+          />
+          <a
+            href="index.html"
+            class="btn btn-verm"
+            style="
+              width: 100%;
+              justify-content: center;
+              padding: 13px;
+              font-size: 19px;
+            "
+            >Cadastrar</a
+          >
+          <div class="acesso-link">
+            Já tenho conta? <a href="login.html">Entrar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="rodape-completo"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

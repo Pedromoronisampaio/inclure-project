@@ -1,0 +1,480 @@
+/* ===== HOME PAGE STYLES ===== */
+
+/* ==================== LAYOUT UTILITIES ==================== */
+.principal {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 24px 0;
+}
+.titulo-sec {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800;
+  color: #2e7d32;
+  margin-bottom: 8px;
+}
+.subtitulo {
+  text-align: center;
+  font-size: 19px;
+  color: #555;
+  margin-bottom: 32px;
+}
+.rotulo {
+  font-size: 25px;
+  font-weight: 700;
+  color: #2e7d32;
+  margin: 32px 0 20px;
+}
+.topo {
+  text-align: center;
+  padding: 32px 0 16px;
+}
+.topo h1 {
+  font-size: 34px;
+  font-weight: 800;
+  color: #2e7d32;
+  margin-bottom: 8px;
+}
+.topo p {
+  font-size: 19px;
+  color: #666;
+}
+
+/* ==================== BUTTONS ==================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 22px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s;
+}
+.btn-verm {
+  background: #e53935;
+  color: #fff;
+}
+.btn-verm:hover {
+  background: #c62828;
+}
+.btn-ciano {
+  background: #00bcd4;
+  color: #fff;
+}
+.btn-ciano:hover {
+  background: #0097a7;
+}
+.btn-teal {
+  background: #00acc1;
+  color: #fff;
+  border-radius: 10px;
+  padding: 14px 40px;
+  font-size: 20px;
+  box-shadow: 0 4px 12px rgba(0, 172, 193, 0.3);
+}
+.btn-teal:hover {
+  background: #00838f;
+}
+.btn-largura-total {
+  width: 100%;
+  justify-content: center;
+}
+.btn-submit-full {
+  width: 100%;
+  justify-content: center;
+  padding: 13px;
+  font-size: 19px;
+}
+
+/* ==================== FORMULÁRIOS ==================== */
+.campo-input {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1.5px solid #fde68a;
+  background: #fefde8;
+  font-size: 17px;
+  outline: none;
+  transition: border-color 0.2s;
+  color: inherit;
+  width: 100%;
+  font-family: inherit;
+}
+.campo-input:focus {
+  border-color: #4caf50;
+}
+.area-txt {
+  resize: vertical;
+  min-height: 110px;
+}
+.btn-enviar {
+  background: #ff9800;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.2s;
+  font-family: inherit;
+}
+.btn-enviar:hover {
+  background: #f57c00;
+}
+.btn-enviar img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+.campos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.campo label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* ==================== FILTROS ==================== */
+.filtro {
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  flex-wrap: wrap;
+}
+.busca {
+  position: relative;
+  flex: 1;
+  min-width: 180px;
+}
+.busca input {
+  width: 100%;
+  padding: 10px 40px 10px 14px;
+  border: 1.5px solid #fde68a;
+  border-radius: 8px;
+  background: #fefde8;
+  font-size: 17px;
+  outline: none;
+  color: inherit;
+  font-family: inherit;
+}
+.busca img {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+.seletor {
+  padding: 10px 14px;
+  border: 1.5px solid #fde68a;
+  border-radius: 8px;
+  background: #fefde8;
+  font-size: 17px;
+  cursor: pointer;
+  outline: none;
+  color: inherit;
+  min-width: 120px;
+  font-family: inherit;
+}
+.btn-filtrar {
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: inherit;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+}
+.btn-filtrar:hover {
+  background: #388e3c;
+}
+.btn-limpar {
+  background: #9e9e9e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: inherit;
+}
+.btn-limpar:hover {
+  background: #757575;
+}
+.ver-mais {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.oculto {
+  display: none !important;
+}
+
+/* ==================== SPECIFIC STYLES ==================== */
+.icone-acao-admin {
+  border-radius: 8px;
+}
+.artigo-centralizado {
+  text-align: center;
+}
+.destaque {
+  background: #fff;
+  border-radius: 12px;
+  padding: 36px 40px;
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 32px;
+}
+.txt-destaque {
+  flex: 1;
+}
+.txt-destaque h1 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+.txt-destaque h1 span {
+  color: #e8a000;
+}
+.txt-destaque p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+.acoes {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.img-destaque {
+  flex-shrink: 0;
+}
+.img-destaque img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+.grade-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+.icone-card {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e8f5e9;
+  margin-bottom: 8px;
+}
+.icone-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card h3 {
+  font-size: 19px;
+  font-weight: 700;
+}
+.card p {
+  font-size: 17px;
+  color: #666;
+  line-height: 1.5;
+}
+.baixar-app {
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 32px;
+}
+.img-cel {
+  flex-shrink: 0;
+}
+.img-cel img {
+  width: 170px;
+  height: auto;
+  border-radius: 12px;
+}
+.texto-app {
+  flex: 0 1 auto;
+}
+.texto-app h2 {
+  font-size: 25px;
+  font-weight: 700;
+  color: #2e7d32;
+  margin-bottom: 8px;
+}
+.texto-app p {
+  font-size: 17px;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+.btn-loja {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.btn-loja img {
+  height: 128px;
+  width: auto;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.contato {
+  background: #fff;
+  border-radius: 12px;
+  padding: 36px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 32px;
+}
+.info-contato h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.info-contato p {
+  font-size: 17px;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+.itens-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.item-cont {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 17px;
+}
+.item-cont img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.tit-redes {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.redes {
+  display: flex;
+  gap: 12px;
+}
+.btn-rede {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-rede img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.btn-rede:hover {
+  opacity: 0.8;
+}
+
+/* ==================== RESPONSIVENESS ==================== */
+@media (max-width: 768px) {
+  .grade-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+  .destaque {
+    flex-direction: column;
+    padding: 24px;
+  }
+  .img-destaque {
+    display: none;
+  }
+  .baixar-app {
+    flex-direction: column;
+    padding: 24px;
+    text-align: center;
+  }
+  .btn-loja {
+    justify-content: center;
+  }
+  .contato {
+    grid-template-columns: 1fr;
+  }
+  .filtro {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .busca {
+    min-width: unset;
+  }
+}
+@media (max-width: 480px) {
+  .grade-cards {
+    grid-template-columns: 1fr;
+  }
+}

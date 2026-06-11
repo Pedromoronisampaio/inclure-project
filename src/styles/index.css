@@ -1,0 +1,24 @@
+/* ===== Fundação ===== */
+@import "./base.css";
+@import "./modo-escuro.css";
+
+/* ===== Componentes ===== */
+@import "../components/Navbar/Navbar.css";
+@import "../components/Footer/Footer.css";
+
+/* ===== Páginas ===== */
+@import "../pages/Home/Home.css";
+@import "../pages/Sobre/Sobre.css";
+@import "../pages/Profissionais/Profissionais.css";
+@import "../pages/ONGs/ONGs.css";
+@import "../pages/Neurodivergencias/Neurodivergencias.css";
+@import "../pages/NeuroDetalhe/NeuroDetalhe.css";
+@import "../pages/Blog/Blog.css";
+@import "../pages/BlogDetalhe/BlogDetalhe.css";
+@import "../pages/Login/Login.css";
+@import "../pages/Cadastro/Cadastro.css";
+@import "../pages/Perfil/Perfil.css";
+@import "../pages/Download/Download.css";
+@import "../pages/EsqueciSenha/EsqueciSenha.css";
+@import "../pages/TrocarSenha/TrocarSenha.css";
+@import "../pages/Admin/Admin.css";

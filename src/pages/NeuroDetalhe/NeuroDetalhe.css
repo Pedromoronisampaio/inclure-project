@@ -1,0 +1,180 @@
+/* ===== NEURODIVERGENCIA DETAIL PAGE STYLES ===== */
+
+/* ==================== LAYOUT UTILITIES ==================== */
+.principal {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 24px 0;
+}
+.secao-voltar {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.texto-carregando {
+  text-align: center;
+  padding: 40px;
+  color: #888;
+}
+
+/* ==================== BUTTONS ==================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 22px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s;
+}
+.btn-ciano {
+  background: #00bcd4;
+  color: #fff;
+}
+.btn-ciano:hover {
+  background: #0097a7;
+}
+
+/* ==================== SPECIFIC STYLES ==================== */
+.trilha {
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px 20px;
+  margin-bottom: 24px;
+  font-size: 17px;
+  color: #888;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+.trilha a,
+.trilha span {
+  color: #2e7d32;
+  cursor: pointer;
+}
+.trilha a:hover,
+.trilha span:hover {
+  text-decoration: underline;
+}
+.neuro-topo {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 24px;
+}
+.neuro-banner-det {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+.neuro-banner-det img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.neuro-tit {
+  padding: 24px 32px;
+}
+.neuro-tit h1 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #2e7d32;
+  margin-bottom: 8px;
+}
+.neuro-tit p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.7;
+}
+.neuro-det {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.neuro-secao {
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px 28px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  margin-bottom: 20px;
+}
+.neuro-secao h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2e7d32;
+  margin-bottom: 14px;
+}
+.neuro-secao ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.neuro-secao ul li {
+  font-size: 17px;
+  color: #555;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.5;
+}
+.neuro-secao ul li::before {
+  content: "•";
+  color: #4caf50;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.estat-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  text-align: center;
+  margin-bottom: 16px;
+}
+.estat-num {
+  font-size: 34px;
+  font-weight: 800;
+  color: #2e7d32;
+}
+.estat-rot {
+  font-size: 16px;
+  color: #666;
+  margin-top: 4px;
+}
+.fontes-secao {
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px 28px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  margin-bottom: 20px;
+}
+.fontes-secao h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2e7d32;
+  margin-bottom: 14px;
+}
+.fontes-lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.fontes-lista li {
+  font-size: 16px;
+  color: #555;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.5;
+}
+
+/* ==================== RESPONSIVENESS ==================== */
+@media (max-width: 768px) {
+  .neuro-det {
+    grid-template-columns: 1fr;
+  }
+}

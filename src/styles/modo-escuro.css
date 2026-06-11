@@ -1,0 +1,362 @@
+/*====================MODO ESCURO - Variáveis e sobrescritas do tema escuro====================*/
+
+.modo-escuro {
+  background: #1a1f1a;
+  color: #e8f0e8;
+}
+.modo-escuro .destaque,
+.modo-escuro .baixar-app,
+.modo-escuro .contato,
+.modo-escuro .mvv-card,
+.modo-escuro .perfil-card,
+.modo-escuro .perfil-secao,
+.modo-escuro .acesso-box,
+.modo-escuro .func-card,
+.modo-escuro .requisitos,
+.modo-escuro .trilha,
+.modo-escuro .artigo-topo,
+.modo-escuro .artigo-corpo,
+.modo-escuro .neuro-topo,
+.modo-escuro .neuro-secao,
+.modo-escuro .estat-card {
+  background: #2a352a;
+}
+.modo-escuro .card,
+.modo-escuro .caixa,
+.modo-escuro .prof-card,
+.modo-escuro .ong-card,
+.modo-escuro .faq-item,
+.modo-escuro .card-equipe,
+.modo-escuro .neuro-card,
+.modo-escuro .blog-card,
+.modo-escuro .modal-box,
+.modo-escuro .filtro,
+.modo-escuro .func-card,
+.modo-escuro .requisitos,
+.modo-escuro .download-secao {
+  background: #2a352a;
+  border-color: #3a4a3a;
+}
+.modo-escuro .card p,
+.modo-escuro .topo p,
+.modo-escuro .subtitulo,
+.modo-escuro .historia p,
+.modo-escuro .texto-mvv p,
+.modo-escuro .perfil-cargo,
+.modo-escuro .acesso-box .acesso-link,
+.modo-escuro .neuro-topo p,
+.modo-escuro .neuro-secao ul li,
+.modo-escuro .neuro-dados p,
+.modo-escuro .ong-desc,
+.modo-escuro .blog-dados p,
+.modo-escuro .info-item,
+.modo-escuro .artigo-topo .artigo-data,
+.modo-escuro .artigo-topo .artigo-leit,
+.modo-escuro .artigo-autor .autor-cargo,
+.modo-escuro .artigo-corpo,
+.modo-escuro .func-card p,
+.modo-escuro .req-item ul li,
+.modo-escuro .aviso,
+.modo-escuro .ong-estado,
+.modo-escuro .card-equipe p,
+.modo-escuro .faq-resp.aberta,
+.modo-escuro .estat-rot,
+.modo-escuro .recuperacao-desc,
+.modo-escuro .recuperacao-subtitulo,
+.modo-escuro .recuperacao-texto-reenvio {
+  color: #9ab09a;
+}
+.modo-escuro .titulo-sec {
+  color: #66bb6a;
+}
+.modo-escuro .neuro-dados h3,
+.modo-escuro .ong-nome,
+.modo-escuro .perfil-info h2,
+.modo-escuro .acesso-box h2,
+.modo-escuro .artigo-topo .artigo-tit,
+.modo-escuro .artigo-corpo h2,
+.modo-escuro .neuro-tit h1,
+.modo-escuro .neuro-secao h2,
+.modo-escuro .estat-num,
+.modo-escuro .requisitos h3,
+.modo-escuro .func-card h3 {
+  color: #e8f0e8;
+}
+.modo-escuro .campo-input,
+.modo-escuro .seletor,
+.modo-escuro textarea,
+.modo-escuro select {
+  background: #1e2a1e;
+  color: #e8f0e8;
+  border-color: #3a4a3a;
+}
+.modo-escuro .campo-input::placeholder,
+.modo-escuro textarea::placeholder {
+  color: #6a8a6a;
+}
+.modo-escuro .btn-genero {
+  background: #1e2a1e;
+  border-color: #3a4a3a;
+  color: #e8f0e8;
+}
+.modo-escuro .btn-genero.ativo {
+  background: #2e3d2e;
+  border-color: #4caf50;
+}
+.modo-escuro .perfil-badge {
+  background: #2e3d2e;
+  color: #6ab06a;
+}
+.modo-escuro .aviso {
+  background: #1e2e1e;
+  border-color: #2e4a2e;
+  color: #9ab09a;
+}
+.modo-escuro .artigo-trilha {
+  background: #2a352a;
+  color: #8aab8a;
+}
+.modo-escuro .artigo-trilha a,
+.modo-escuro .artigo-trilha span {
+  color: #66bb6a;
+}
+.modo-escuro .artigo-badge {
+  background: #3a4a3a;
+  color: #a8d4a8;
+}
+.modo-escuro .artigo-autor {
+  border-top-color: #3a4a3a;
+}
+.modo-escuro .artigo-tags {
+  border-top-color: #3a4a3a;
+}
+.modo-escuro .artigo-tag {
+  background: #3a4a3a;
+  color: #a8d4a8;
+}
+.modo-escuro .secao-relacionados .cartao-relacionado {
+  background: #2a352a;
+}
+.modo-escuro .bloco-nav {
+  background: #2a352a;
+}
+.modo-escuro .link-nav {
+  color: #d0e2d0;
+}
+.modo-escuro .tema-btn {
+  background: #3e5540;
+}
+.modo-escuro .tema-btn .thumb {
+  transform: translateX(32px);
+}
+.modo-escuro .btn-menu span {
+  background: #cfe2cf;
+}
+.modo-escuro .menu-mob {
+  background: #2a352a;
+  border-color: #3f553f;
+}
+.modo-escuro .menu-mob .link-nav {
+  background: #2a372a;
+}
+.modo-escuro .tema-mob {
+  background: #2a3a2a;
+}
+.modo-escuro .tema-mob span {
+  color: #e2f0e2;
+}
+.modo-escuro .tag {
+  background: #3a4a3a;
+  color: #b8d4b8;
+  border: 1px solid #5a7a5a;
+}
+.modo-escuro .ong-tag {
+  background: #2e3d2e;
+  color: #a8c8a8;
+  border: 1px solid #4a6a4a;
+}
+.modo-escuro .faq-pergunta {
+  color: #e8f0e8;
+}
+.modo-escuro .faq-pergunta:hover {
+  background: #2e3d2e;
+}
+.modo-escuro .perfil-secao h3 {
+  border-bottom-color: #2e3d2e;
+}
+.modo-escuro .campo label {
+  color: #8aab8a;
+}
+.modo-escuro .modal-tag {
+  background: #2e3d2e;
+  color: #6ab06a;
+  border: 1px solid #4a6a4a;
+}
+.modo-escuro .selo-validado,
+.modo-escuro .blog-categ {
+  background: #2e3d2e;
+  color: #6ab06a;
+  border: 1px solid #4a6a4a;
+}
+.modo-escuro .rodape {
+  background: #141a14;
+}
+.modo-escuro .ong-barra {
+  border-top-color: #3a4a3a;
+  color: #8aab8a;
+}
+.modo-escuro .artigo-corpo blockquote {
+  background: #233323;
+  color: #8aab8a;
+}
+.modo-escuro .info-rel h4 {
+  color: #ddeedd;
+}
+.modo-escuro .busca input {
+  background: #1e2a1e;
+  border-color: #3a4a3a;
+  color: #e8f0e8;
+}
+.modo-escuro .busca input::placeholder {
+  color: #6a8a6a;
+}
+.modo-escuro .contato {
+  background: #232b23;
+}
+.modo-escuro .fontes-secao {
+  background: #2a352a;
+}
+.modo-escuro .fontes-lista li {
+  color: #9ab09a;
+}
+.modo-escuro .modal-box {
+  background: #2a352a;
+}
+.modo-escuro .modal-dado .valor {
+  color: #e8f0e8;
+}
+.modo-escuro .modal-desc {
+  color: #9ab09a;
+}
+.modo-escuro .acesso-box {
+  background: #2a352a;
+}
+.modo-escuro .texto-tipos {
+  background: #1e2e1e;
+  border-color: #2e4a2e;
+  color: #9ab09a;
+}
+.modo-escuro .btn-sexo {
+  background: #1e2a1e;
+  border-color: #3a4a3a;
+  color: #e8f0e8;
+}
+.modo-escuro .btn-sexo.ativo {
+  background: #2e3d2e;
+  border-color: #4caf50;
+  color: #e8f0e8;
+}
+.modo-escuro .toggle-neuro {
+  background: #1e2a1e;
+  border-color: #3a4a3a;
+  color: #e8f0e8;
+}
+.modo-escuro .toggle-neuro label {
+  color: #e8f0e8;
+}
+.modo-escuro .perfil-card,
+.modo-escuro .perfil-secao {
+  background: #2a352a;
+}
+.modo-escuro .admin-acao-btn {
+  background: #2a352a;
+  color: #e8f0e8;
+}
+.modo-escuro .admin-acao-btn p {
+  color: #9ab09a;
+}
+.modo-escuro .dash-card {
+  background: #2a352a;
+}
+.modo-escuro .dash-stat {
+  border-bottom-color: #3a4a3a;
+}
+.modo-escuro .dash-stat-num,
+.modo-escuro .dash-total {
+  color: #66bb6a;
+}
+.modo-escuro .admin-modal {
+  background: #2a352a;
+}
+.modo-escuro .confirm-modal {
+  background: #2a352a;
+}
+.modo-escuro .prof-pub-form {
+  background: #2a352a;
+}
+.modo-escuro input[type="file"].campo-input::file-selector-button {
+  background: #388e3c;
+}
+
+/*====================MODO ESCURO - Elementos Novos====================*/
+
+.modo-escuro .saida-modal {
+  background: #2a352a;
+}
+.modo-escuro .saida-texto {
+  color: #9ab09a;
+}
+.modo-escuro .saida-destino {
+  background: #1e2a1e;
+  border-color: #3a4a3a;
+}
+.modo-escuro .saida-destino-url {
+  color: #81c784;
+}
+.modo-escuro .saida-titulo {
+  color: #e8f0e8;
+}
+
+.modo-escuro .perfil-role-info {
+  background: #1e2a1e;
+  border-color: #3a4a3a;
+}
+.modo-escuro .perfil-role-desc {
+  color: #9ab09a;
+}
+.modo-escuro .perfil-condicional {
+  background: #1a241a;
+  border-color: #2e3d2e;
+}
+.modo-escuro .perfil-secao-subtitulo {
+  color: #b8d4b8;
+}
+
+.modo-escuro .ong-cnpj {
+  background: #1e2a1e;
+  border-color: #3a4a3a;
+  color: #a8c8a8;
+}
+
+.modo-escuro .toggle-profissional {
+  border-color: #1976d2;
+  background: #0d1b2a;
+}
+.modo-escuro .toggle-profissional:hover:not(.toggle-bloqueado) {
+  border-color: #42a5f5;
+  background: #1b263b;
+}
+
+.modo-escuro .barra-status-prof {
+  background: #1e2a1e;
+  border-color: #3a4a3a;
+  color: #e8f0e8;
+}
+
+.modo-escuro .confirm-modal p {
+  color: #e8f0e8;
+}
+.modo-escuro .confirm-modal p span {
+  color: #9ab09a;
+}
+

@@ -1,0 +1,339 @@
+/* ===== NAVBAR COMPONENT STYLES ===== */
+
+.nav-topo {
+  position: fixed;
+  top: 20px;
+  left: 24px;
+  right: 24px;
+  z-index: 1100;
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+}
+.bloco-nav {
+  flex: 1 1 0;
+  min-width: 0;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  align-items: center;
+  padding: 0 clamp(8px, 1.5vw, 20px);
+  height: 68px;
+  transition: background 0.2s;
+  gap: clamp(6px, 1vw, 16px);
+}
+.logo-site {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.logo-site img {
+  height: 48px;
+  width: auto;
+}
+.links-nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+.lista-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(0px, 0.4vw, 6px);
+  list-style: none;
+  min-width: 0;
+}
+.link-nav {
+  padding: clamp(5px, 0.5vw, 7px) clamp(6px, 1vw, 14px);
+  border-radius: 40px;
+  font-size: clamp(13px, 1.2vw, 18px);
+  font-weight: 500;
+  color: #2c3e2c;
+  transition: all 0.2s;
+  white-space: nowrap;
+  display: inline-block;
+}
+.link-nav:hover,
+.link-nav.ativo {
+  background: rgba(46, 102, 246, 0.1);
+  color: #2e66f6;
+}
+.area-tema {
+  display: flex;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+.tema-btn {
+  display: flex;
+  align-items: center;
+  background: #e0e7e0;
+  border-radius: 40px;
+  padding: 4px;
+  gap: 2px;
+  cursor: pointer;
+  width: 64px;
+  height: 32px;
+  position: relative;
+  border: none;
+}
+.tema-btn .thumb {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  transition: transform 0.25s;
+  position: absolute;
+  left: 4px;
+  top: 3px;
+}
+.icone-sol,
+.icone-lua {
+  font-size: 15px;
+  flex: 1;
+  text-align: center;
+  opacity: 0.6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icone-tema-img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  display: block;
+}
+.icone-tema-thumb {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  display: block;
+}
+body:not(.modo-escuro) .icone-sol,
+.modo-escuro .icone-lua {
+  opacity: 1;
+}
+.bloco-user {
+  background: #1565c0;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 clamp(8px, 1.5vw, 24px);
+  height: 68px;
+  flex-shrink: 1;
+  min-width: fit-content;
+}
+.area-login {
+  display: flex;
+  align-items: center;
+  gap: clamp(6px, 1vw, 16px);
+}
+.link-entrar {
+  font-weight: 600;
+  font-size: clamp(13px, 1.2vw, 18px);
+  color: #fff;
+  padding: clamp(4px, 0.4vw, 6px) clamp(8px, 1vw, 16px);
+  border-radius: 40px;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.link-entrar:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+.nav-nome-user {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.link-avatar {
+  display: flex;
+  align-items: center;
+}
+.avatar-usuario {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  border: 1px solid white;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+.avatar-usuario img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.link-avatar:hover .avatar-usuario {
+  transform: scale(1.05);
+}
+.btn-menu {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  gap: 5px;
+}
+.btn-menu span {
+  display: block;
+  width: 26px;
+  height: 2.5px;
+  background: #2c3e2c;
+  border-radius: 4px;
+  transition: all 0.25s;
+}
+.btn-menu.aberto span:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+.btn-menu.aberto span:nth-child(2) {
+  opacity: 0;
+}
+.btn-menu.aberto span:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* ==================== MENU MOBILE ==================== */
+.menu-mob {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 20px;
+  left: 24px;
+  right: 24px;
+  background: #fff;
+  border-radius: 24px;
+  padding: 88px 20px 20px;
+  gap: 8px;
+  z-index: 1050;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e2ede2;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+.menu-mob.aberto {
+  display: flex;
+}
+.menu-mob .link-nav {
+  padding: 12px 16px;
+  text-align: center;
+  background: #f9faf9;
+  border-radius: 60px;
+  display: block;
+}
+.tema-mob {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #eef2ee;
+  padding: 12px 18px;
+  border-radius: 60px;
+  margin: 4px 0;
+}
+.tema-mob span {
+  font-weight: 500;
+  color: #1e3a1e;
+}
+.btn-entrar-mob {
+  justify-content: center;
+  margin-top: 4px;
+  background: #1565c0;
+  border: none;
+  border-radius: 60px;
+  padding: 13px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 19px;
+  width: 100%;
+  text-align: center;
+}
+.btn-entrar-mob-perfil {
+  background: #2e7d32;
+}
+.btn-entrar-mob-sair {
+  background: #e53935;
+}
+.btn-entrar-mob-cadastrar {
+  background: #e53935;
+}
+.avatar-mini-menu {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #fff;
+  flex-shrink: 0;
+}
+.avatar-mini-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.btn-icon-mob {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* ==================== RESPONSIVENESS ==================== */
+@media (max-width: 860px) {
+  .nav-topo {
+    left: 16px;
+    right: 16px;
+    gap: 12px;
+  }
+  .menu-mob {
+    left: 16px;
+    right: 16px;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    padding-top: 104px;
+  }
+  .nav-topo {
+    gap: 0;
+  }
+  .bloco-user {
+    display: none;
+  }
+  .bloco-nav {
+    display: flex;
+    padding: 0 16px;
+    grid-template-columns: unset;
+  }
+  .links-nav,
+  .area-tema {
+    display: none;
+  }
+  .btn-menu {
+    display: flex;
+    margin-left: auto;
+  }
+  .logo-site img {
+    height: 44px;
+  }
+}
+@media (min-width: 769px) {
+  .menu-mob {
+    display: none !important;
+  }
+}

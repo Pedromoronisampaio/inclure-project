@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inclure – Blog e Pesquisas</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="navegacao-completa"></div>
+
+    <div class="principal">
+      <div class="topo">
+        <h1 class="titulo-sec">Blog &amp; Pesquisas</h1>
+        <p class="subtitulo">
+          Políticas públicas, pesquisas científicas e novidades sobre
+          neurodivergência no Brasil e no mundo
+        </p>
+      </div>
+      <div class="filtro">
+        <div class="busca">
+          <input
+            type="text"
+            id="buscaBlog"
+            placeholder="Buscar artigos..."
+          /><img
+            src="https://placehold.co/18x18/888/white?text=B"
+            alt="Buscar"
+          />
+        </div>
+        <select class="seletor" id="filtroCategBlog">
+          <option value="">Categoria</option>
+          <option>Políticas Públicas</option>
+          <option>Pesquisas</option>
+          <option>Neurodivergência</option>
+          <option>Internacional</option>
+        </select>
+        <button class="btn-filtrar" onclick="filtrarBlog()">Filtrar</button>
+        <button class="btn-limpar" onclick="limparFiltroBlog()">Limpar</button>
+      </div>
+      <div class="blog-grade" id="gradeBlog"></div>
+      <div class="ver-mais" id="btnVerMaisBlog">
+        <button class="btn btn-teal" onclick="verMaisBlog()">Ver Mais</button>
+      </div>
+    </div>
+
+    <div id="rodape-completo"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

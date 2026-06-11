@@ -1,0 +1,356 @@
+/* ===== CADASTRO PAGE STYLES ===== */
+
+/* ==================== BUTTONS ==================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 22px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s;
+}
+.btn-verm {
+  background: #e53935;
+  color: #fff;
+}
+.btn-verm:hover {
+  background: #c62828;
+}
+.btn-submit-full {
+  width: 100%;
+  justify-content: center;
+  padding: 13px;
+  font-size: 19px;
+}
+
+/* ==================== FORMULÁRIOS ==================== */
+.campo-input {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1.5px solid #fde68a;
+  background: #fefde8;
+  font-size: 17px;
+  outline: none;
+  transition: border-color 0.2s;
+  color: inherit;
+  width: 100%;
+  font-family: inherit;
+}
+.campo-input:focus {
+  border-color: #4caf50;
+}
+input[type="file"].campo-input {
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+}
+input[type="file"].campo-input::file-selector-button {
+  background: #2e7d32;
+  color: #fff;
+  border: none;
+  border-radius: 7px 0 0 7px;
+  padding: 11px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+  margin-right: 12px;
+}
+input[type="file"].campo-input::file-selector-button:hover {
+  background: #1b5e20;
+}
+.area-txt {
+  resize: vertical;
+  min-height: 110px;
+}
+.btn-enviar {
+  background: #ff9800;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.2s;
+  font-family: inherit;
+}
+.btn-enviar:hover {
+  background: #f57c00;
+}
+.btn-enviar img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+.campos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.campo label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #555;
+}
+.campo.full {
+  grid-column: 1/-1;
+}
+.seletor {
+  padding: 10px 14px;
+  border: 1.5px solid #fde68a;
+  border-radius: 8px;
+  background: #fefde8;
+  font-size: 17px;
+  cursor: pointer;
+  outline: none;
+  color: inherit;
+  min-width: 120px;
+  font-family: inherit;
+}
+.seletor-full {
+  width: 100%;
+}
+.caixa-erro {
+  background: #fff3f3;
+  border: 1px solid #ffcdd2;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 16px;
+  color: #c62828;
+}
+.campo-foto-upload {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.preview-avatar {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: 4px;
+}
+.label-neuro {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 6px;
+  display: block;
+}
+.toggle-neuro-campo {
+  margin-bottom: 10px;
+}
+.toggle-texto {
+  font-weight: 500;
+}
+.label-upload {
+  font-size: 14px;
+  color: #555;
+  font-weight: 600;
+}
+.input-oculto {
+  display: none;
+}
+.campo-senha-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.campo-senha-wrap .campo-input {
+  padding-right: 48px;
+}
+.btn-visibilidade {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+.btn-visibilidade:hover {
+  opacity: 1;
+}
+.btn-visibilidade img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+/* ==================== SPECIFIC STYLES ==================== */
+.auth {
+  max-width: 500px;
+  margin: 32px auto;
+  padding: 0 24px 32px;
+}
+.auth-wide {
+  max-width: 560px;
+}
+.acesso-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 36px 32px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+.acesso-box h2 {
+  font-size: 27px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.acesso-linha {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.acesso-linha .campo-input {
+  flex: 1;
+  min-width: 0;
+}
+.acesso-box-central {
+  text-align: center;
+}
+.icone-confirmacao {
+  margin-bottom: 16px;
+}
+.icone-confirmacao img {
+  border-radius: 50%;
+}
+.mensagem-sucesso {
+  color: #666;
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+.sexo {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+.btn-sexo {
+  flex: 1;
+  padding: 12px;
+  border: 1.5px solid #fde68a;
+  border-radius: 8px;
+  background: #fefde8;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 17px;
+  transition: 0.2s;
+  font-family: inherit;
+}
+.btn-sexo.ativo {
+  border-color: #4caf50;
+  background: #e8f5e9;
+}
+.def {
+  margin: 16px 0;
+}
+.def h3 {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.acesso-link {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 17px;
+}
+.acesso-link a,
+.acesso-link span {
+  color: #2e7d32;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.texto-tipos {
+  background: #f0f9f0;
+  border: 1px solid #c8e6c9;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin: 16px 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #2e7d32;
+}
+.texto-tipos strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+.texto-tipos ul {
+  margin-left: 16px;
+}
+.texto-tipos ul li {
+  margin-bottom: 4px;
+}
+.toggle-neuro {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #f9fdf9;
+  border-radius: 8px;
+  border: 1.5px solid #c8e6c9;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.toggle-neuro input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #4caf50;
+}
+.toggle-neuro label {
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  flex: 1;
+}
+.campo-bloqueado {
+  opacity: 0.4;
+  pointer-events: none;
+  filter: grayscale(0.5);
+}
+.campo-bloqueado-wrap {
+  position: relative;
+}
+.campo-bloqueado-wrap .lock-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  pointer-events: none;
+}
+
+/* ==================== RESPONSIVENESS ==================== */
+@media (max-width: 480px) {
+  .acesso-linha {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inclure – Meu Perfil</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="navegacao-completa"></div>
+
+    <div class="perfil">
+      <div class="topo">
+        <h1 class="titulo-sec">Meu Perfil</h1>
+        <p class="subtitulo">
+          Gerencie suas informações pessoais e preferências da conta
+        </p>
+      </div>
+      <div class="perfil-card">
+        <div class="perfil-avatar">
+          <div class="perfil-avatar-img">
+            <img
+              src="https://placehold.co/110x110/c8e6c9/2e7d32?text=U"
+              alt="Avatar"
+              id="avatarPerfilImg"
+            />
+          </div>
+          <button class="btn-foto" onclick="editarFotoPerfil()">
+            Editar foto
+          </button>
+          <input
+            type="file"
+            id="inputFotoPerfil"
+            accept="image/*"
+            style="display: none"
+            onchange="previewFoto(this)"
+          />
+        </div>
+        <div class="perfil-info">
+          <h2 id="nomePerfilTopo">Nome do Usuário</h2>
+          <div class="perfil-cargo">Usuário Inclure</div>
+          <span class="perfil-badge">Neurodivergente</span>
+        </div>
+      </div>
+      <div class="perfil-secao">
+        <h3>Informações pessoais</h3>
+        <div class="perfil-campos">
+          <div class="campo">
+            <label>Nome completo</label
+            ><input
+              class="campo-input"
+              type="text"
+              id="perfilNome"
+              placeholder="Seu nome completo"
+            />
+          </div>
+          <div class="campo">
+            <label>E-mail</label
+            ><input
+              class="campo-input"
+              type="email"
+              id="perfilEmail"
+              placeholder="seu@email.com"
+            />
+          </div>
+          <div class="campo">
+            <label>Telefone</label
+            ><input
+              class="campo-input"
+              type="tel"
+              id="perfilTelefone"
+              placeholder="(11) 99999-9999"
+            />
+          </div>
+          <div class="campo">
+            <label>Data de nascimento</label
+            ><input class="campo-input" type="date" id="perfilNascimento" />
+          </div>
+          <div class="campo">
+            <label>Tipo de usuário</label
+            ><select class="campo-input seletor" id="perfilTipo">
+              <option value="">Selecione seu perfil</option>
+              <option>Usuário neurodivergente</option>
+              <option>Responsável</option>
+              <option>Profissional</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label>Gênero</label>
+            <div class="genero" id="perfilGeneroOpcoes">
+              <button
+                type="button"
+                class="btn-genero ativo"
+                onclick="selecionarGenero(this)"
+              >
+                Masculino</button
+              ><button
+                type="button"
+                class="btn-genero"
+                onclick="selecionarGenero(this)"
+              >
+                Feminino</button
+              ><button
+                type="button"
+                class="btn-genero"
+                onclick="selecionarGenero(this)"
+              >
+                Outro
+              </button>
+            </div>
+          </div>
+          <div class="campo full">
+            <label>Neurodivergência</label
+            ><select class="campo-input seletor" id="perfilNeuro">
+              <option value="">Selecione (opcional)</option>
+              <option>Autismo (TEA)</option>
+              <option>TOC</option>
+              <option>TDAH</option>
+              <option>Dislexia</option>
+              <option>Síndrome de Asperger</option>
+              <option>Discalculia</option>
+              <option>Prefiro não informar</option>
+            </select>
+          </div>
+        </div>
+        <div class="perfil-acoes">
+          <button
+            class="btn-sair"
+            onclick="window.location.href = 'index.html'"
+          >
+            Sair da conta
+          </button>
+          <button
+            class="btn-senha"
+            onclick="window.location.href = 'trocar-senha.html'"
+          >
+            Alterar senha
+          </button>
+          <button class="btn-salvar" onclick="salvarPerfil()">
+            Salvar alterações
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="rodape-completo"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

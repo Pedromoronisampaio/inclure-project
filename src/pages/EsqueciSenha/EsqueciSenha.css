@@ -1,0 +1,145 @@
+/* ===== ESQUECI SENHA PAGE STYLES ===== */
+
+/* ==================== BUTTONS ==================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 22px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s;
+}
+.btn-ciano {
+  background: #00bcd4;
+  color: #fff;
+}
+.btn-ciano:hover {
+  background: #0097a7;
+}
+
+/* ==================== FORMULÁRIOS ==================== */
+.campo-input {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1.5px solid #fde68a;
+  background: #fefde8;
+  font-size: 17px;
+  outline: none;
+  transition: border-color 0.2s;
+  color: inherit;
+  width: 100%;
+  font-family: inherit;
+}
+.campo-input:focus {
+  border-color: #4caf50;
+}
+.campos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ==================== AUTH CONTAINER ==================== */
+.auth {
+  max-width: 500px;
+  margin: 32px auto;
+  padding: 0 24px 32px;
+}
+.acesso-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 36px 32px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+.acesso-link {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 17px;
+}
+.acesso-link a,
+.acesso-link span {
+  color: #2e7d32;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ==================== RECUPERAÇÃO STYLES ==================== */
+.recuperacao-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.recuperacao-icone {
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+.recuperacao-titulo {
+  font-size: 27px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.recuperacao-desc {
+  font-size: 17px;
+  color: #666;
+  line-height: 1.5;
+}
+.recuperacao-label {
+  font-size: 17px;
+  font-weight: 600;
+  color: #444;
+  display: block;
+  margin-bottom: 6px;
+}
+.recuperacao-erro {
+  background: #fff3f3;
+  border: 1px solid #ffcdd2;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 17px;
+  color: #c62828;
+}
+.btn-recuperacao {
+  width: 100%;
+  justify-content: center;
+  padding: 13px;
+  font-size: 19px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  transition: 0.2s;
+}
+.recuperacao-titulo-conf {
+  font-size: 27px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.recuperacao-subtitulo {
+  font-size: 17px;
+  color: #666;
+  margin-bottom: 8px;
+}
+.email-destaque {
+  font-size: 18px;
+  color: #2e7d32;
+}
+.recuperacao-texto-reenvio {
+  font-size: 16px;
+  color: #888;
+  margin: 16px 0;
+}
+.link-reenvio {
+  color: #2e7d32;
+  cursor: pointer;
+  text-decoration: underline;
+}

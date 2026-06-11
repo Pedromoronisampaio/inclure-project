@@ -1,0 +1,106 @@
+/* ===== NEURODIVERGENCIAS LIST PAGE STYLES ===== */
+
+/* ==================== LAYOUT UTILITIES ==================== */
+.principal {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 24px 0;
+}
+.titulo-sec {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800;
+  color: #2e7d32;
+  margin-bottom: 8px;
+}
+.rotulo {
+  font-size: 25px;
+  font-weight: 700;
+  color: #2e7d32;
+  margin: 32px 0 20px;
+}
+.topo {
+  text-align: center;
+  padding: 32px 0 16px;
+}
+.topo h1 {
+  font-size: 34px;
+  font-weight: 800;
+  color: #2e7d32;
+  margin-bottom: 8px;
+}
+.topo p {
+  font-size: 19px;
+  color: #666;
+}
+.oculto {
+  display: none !important;
+}
+
+/* ==================== SPECIFIC STYLES ==================== */
+.neuro-grade {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 32px;
+}
+.neuro-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+.neuro-banner {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+.neuro-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.neuro-dados {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.neuro-dados h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.neuro-dados p {
+  font-size: 17px;
+  color: #666;
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 16px;
+}
+.btn-detalhe {
+  background: transparent;
+  border: 2px solid #2e7d32;
+  color: #2e7d32;
+  border-radius: 8px;
+  padding: 9px 18px;
+  font-weight: 600;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.2s;
+  text-align: center;
+  font-family: inherit;
+}
+.btn-detalhe:hover {
+  background: #2e7d32;
+  color: #fff;
+}
+
+/* ==================== RESPONSIVENESS ==================== */
+@media (max-width: 768px) {
+  .neuro-grade {
+    grid-template-columns: 1fr;
+  }
+}

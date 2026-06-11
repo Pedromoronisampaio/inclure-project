@@ -1,0 +1,33 @@
+/*====================BASE - Reset e estilos fundamentais====================*/
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
+
+/* ===== Reset ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #e8f5e9;
+  color: #1a1a1a;
+  transition:
+    background 0.3s,
+    color 0.3s;
+  padding-top: 108px;
+  font-size: 18px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.25;
+}
