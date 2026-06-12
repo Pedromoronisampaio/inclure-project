@@ -111,9 +111,11 @@ export default function Perfil() {
           <input type="file" ref={inputFotoRef} accept="image/*" className="input-oculto" onChange={handleFoto} />
         </div>
         <div className="perfil-info">
-          <h2>{user?.nome || 'Nome do Usuário'}</h2>
-          <div className="perfil-cargo">
-            {isProf && (user?.cargo || form.cargo) ? (user?.cargo || form.cargo) : 'Usuário Inclure'}
+          <div className="perfil-detalhes">
+            <h2>{user?.nome || 'Nome do Usuário'}</h2>
+            <div className="perfil-cargo">
+              {isProf && (user?.cargo || form.cargo) ? (user?.cargo || form.cargo) : 'Usuário Inclure'}
+            </div>
           </div>
           <span className={`perfil-badge ${badge.classe}`}>
             {badge.label}

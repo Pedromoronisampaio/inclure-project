@@ -11,7 +11,10 @@ import twitterImg from '../../assets/twitter.png'
 import enviarImg from '../../assets/enviar.png'
 import mascoteImg from '../../assets/mascote.png'
 import iconeAppImg from '../../assets/icone-app.png'
-import buscaProfissionais from '../../assets/recursos-site/busca-profissionais.jpeg'
+import recurso001 from '../../assets/recursos-site/recurso_001.jpeg'
+import recurso002 from '../../assets/recursos-site/recurso_002.jpeg'
+import recurso003 from '../../assets/recursos-site/recurso_003.jpeg'
+import recurso004 from '../../assets/recursos-site/recurso_004.jpeg'
 import './Home.css'
 
 export default function Home() {
@@ -19,10 +22,10 @@ export default function Home() {
   const navigate = useNavigate()
 
   const recursos = [
-    { icon: buscaProfissionais, titulo: 'Busca por Profissionais', desc: 'Encontre especialistas próximos a você' },
-    { icon: 'https://placehold.co/320x180/2196f3/white?text=IN', titulo: 'Informações sobre Neurodivergências', desc: 'Conteúdos explicativos sobre diferentes condições neurodivergentes' },
-    { icon: 'https://placehold.co/320x180/ff9800/white?text=BL', titulo: 'Blog', desc: 'Artigos, dicas e novidades sobre inclusão e desenvolvimento' },
-    { icon: 'https://placehold.co/320x180/9c27b0/white?text=ON', titulo: 'ONGs', desc: 'Informações sobre organizações que apoiam pessoas neurodivergentes' }
+    { icon: recurso001, titulo: 'Busca por Profissionais', desc: 'Encontre especialistas próximos a você' },
+    { icon: recurso002, titulo: 'Informações sobre Neurodivergências', desc: 'Conteúdos explicativos sobre diferentes condições neurodivergentes' },
+    { icon: recurso003, titulo: 'Blog', desc: 'Artigos, dicas e novidades sobre inclusão e desenvolvimento' },
+    { icon: recurso004, titulo: 'ONGs', desc: 'Informações sobre organizações que apoiam pessoas neurodivergentes' }
   ];
   const handleEnviar = (e) => {
     e.preventDefault()

@@ -1,20 +1,28 @@
 import { Link } from 'react-router-dom'
 import appStoreImg from '../../assets/app-store.png'
 import playStoreImg from '../../assets/play-store.png'
+import func001 from '../../assets/funcionalidades/funcionalidade_001.jpeg'
+import func002 from '../../assets/funcionalidades/funcionalidade_002.jpeg'
+import func003 from '../../assets/funcionalidades/funcionalidade_003.jpeg'
+import func004 from '../../assets/funcionalidades/funcionalidade_004.jpeg'
+import tela001 from '../../assets/conheca-app/tela_001.jpeg'
+import tela002 from '../../assets/conheca-app/tela_002.jpeg'
+import tela003 from '../../assets/conheca-app/tela_003.jpeg'
+import tela004 from '../../assets/conheca-app/tela_004.jpeg'
 import './Download.css'
 
 const funcionalidades = [
-  { icon: 'https://placehold.co/64x64/e53935/white?text=VA', titulo: 'Videoaulas', desc: 'Acesse conteúdos educativos em vídeo com recursos de acessibilidade e adaptação.' },
-  { icon: 'https://placehold.co/64x64/2196f3/white?text=TE', titulo: 'Textos Educativos', desc: 'Leia materiais explicativos sobre neurodivergências e desenvolvimento de forma acessível.' },
-  { icon: 'https://placehold.co/64x64/9c27b0/white?text=JE', titulo: 'Jogos Educativos', desc: 'Atividades interativas e gamificadas para estimular habilidades cognitivas.' },
-  { icon: 'https://placehold.co/64x64/4caf50/white?text=VP', titulo: 'Progresso no App', desc: 'Acompanhe seu desenvolvimento e evolução através de métricas e relatórios personalizados.' }
+  { icon: func001, titulo: 'Videoaulas', desc: 'Acesse conteúdos educativos em vídeo com recursos de acessibilidade e adaptação.' },
+  { icon: func002, titulo: 'Textos Educativos', desc: 'Leia materiais explicativos sobre neurodivergências e desenvolvimento de forma acessível.' },
+  { icon: func003, titulo: 'Jogos Educativos', desc: 'Atividades interativas e gamificadas para estimular habilidades cognitivas.' },
+  { icon: func004, titulo: 'Progresso no App', desc: 'Acompanhe seu desenvolvimento e evolução através de métricas e relatórios personalizados.' }
 ];
 
 const telas = [
-  { src: 'https://placehold.co/280x500/1b5e20/white?text=Tela+Inicio', alt: 'Tela de início' },
-  { src: 'https://placehold.co/280x500/1565c0/white?text=Tela+Jogos', alt: 'Tela de jogos' },
-  { src: 'https://placehold.co/280x500/6a1b9a/white?text=Tela+Sons', alt: 'Tela de sons' },
-  { src: 'https://placehold.co/280x500/bf360c/white?text=Tela+Perfil', alt: 'Tela de perfil' },
+  { src: tela001, alt: 'Tela de início' },
+  { src: tela002, alt: 'Tela de jogos' },
+  { src: tela003, alt: 'Tela de sons' },
+  { src: tela004, alt: 'Tela de perfil' },
 ]
 
 export default function Download() {

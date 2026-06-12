@@ -33,9 +33,11 @@ export default function AdminPerfil() {
           </div>
         </div>
         <div className="info-admin">
-          <h2 className="nome-admin">Administrador</h2>
-          <div className="email-admin">admin@inclure.com.br</div>
-          <div className="admin-badge">Administrador do Sistema</div>
+          <div className="info-admin-detalhes">
+            <h2 className="nome-admin">Administrador</h2>
+            <div className="email-admin">admin@inclure.com.br</div>
+            <div className="admin-badge">Administrador do Sistema</div>
+          </div>
           <div className="acoes-admin">
             <button className="btn btn-cinza" onClick={() => { logout(); navigate('/') }}><img src={sairIconImg} alt="" className="btn-icon" />Sair da conta</button>
             <Link to="/admin/dashboard" className="btn btn-azul">Ver Dashboard</Link>

@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { profissionais as mockProf, ongs as mockOngs, artigos as mockArtigos } from '../data/mockData'
 
 const BASE_URL = import.meta.env.VITE_API_URL || 'http://api.inclu-re.org'
 
@@ -56,7 +57,16 @@ export const updateMe = (dados) => {
 export const getProfissionais = () => {
   return api.get('/profissionais').catch(() => {
     const extra = JSON.parse(localStorage.getItem('inclure_profissionais_extra') || '[]')
-    return localResponse(extra)
+    const edicoes = JSON.parse(localStorage.getItem('inclure_profissionais_edicoes') || '{}')
+    const removidos = JSON.parse(localStorage.getItem('inclure_profissionais_removidos') || '[]')
+    const val = JSON.parse(localStorage.getItem('inclure_validacoes') || '{}')
+    const base = mockProf
+      .filter(p => !removidos.includes(p.id))
+      .map(p => {
+        const editado = edicoes[p.id] ? { ...p, ...edicoes[p.id] } : p
+        return { ...editado, validado: val[p.id] !== undefined ? val[p.id] : editado.validado }
+      })
+    return localResponse([...base, ...extra])
   })
 }
 
@@ -73,10 +83,14 @@ export const postProfissional = (dados) => {
 export const putProfissional = (id, dados) => {
   return api.put(`/profissionais/${id}`, dados).catch(() => {
     const extra = JSON.parse(localStorage.getItem('inclure_profissionais_extra') || '[]')
-    const idx = extra.findIndex(p => p.id === id)
-    if (idx !== -1) {
-      extra[idx] = { ...extra[idx], ...dados }
+    const idxExtra = extra.findIndex(p => p.id === id)
+    if (idxExtra !== -1) {
+      extra[idxExtra] = { ...extra[idxExtra], ...dados }
       localStorage.setItem('inclure_profissionais_extra', JSON.stringify(extra))
+    } else {
+      const edicoes = JSON.parse(localStorage.getItem('inclure_profissionais_edicoes') || '{}')
+      edicoes[id] = { ...(edicoes[id] || {}), ...dados }
+      localStorage.setItem('inclure_profissionais_edicoes', JSON.stringify(edicoes))
     }
     return localResponse({ ok: true })
   })
@@ -86,6 +100,11 @@ export const deleteProfissional = (id) => {
   return api.delete(`/profissionais/${id}`).catch(() => {
     const extra = JSON.parse(localStorage.getItem('inclure_profissionais_extra') || '[]')
     localStorage.setItem('inclure_profissionais_extra', JSON.stringify(extra.filter(p => p.id !== id)))
+    const removidos = JSON.parse(localStorage.getItem('inclure_profissionais_removidos') || '[]')
+    if (!removidos.includes(id)) {
+      removidos.push(id)
+      localStorage.setItem('inclure_profissionais_removidos', JSON.stringify(removidos))
+    }
     return localResponse({ ok: true })
   })
 }
@@ -103,7 +122,12 @@ export const validarProfissional = (id, validado) => {
 export const getOngs = () => {
   return api.get('/ongs').catch(() => {
     const extra = JSON.parse(localStorage.getItem('inclure_ongs_extra') || '[]')
-    return localResponse(extra)
+    const edicoes = JSON.parse(localStorage.getItem('inclure_ongs_edicoes') || '{}')
+    const removidas = JSON.parse(localStorage.getItem('inclure_ongs_removidas') || '[]')
+    const base = mockOngs
+      .filter(o => !removidas.includes(o.id))
+      .map(o => edicoes[o.id] ? { ...o, ...edicoes[o.id] } : o)
+    return localResponse([...base, ...extra])
   })
 }
 
@@ -139,6 +163,22 @@ export const postOng = (dados) => {
   })
 }
 
+export const putOng = (id, dados) => {
+  return api.put(`/ongs/${id}`, dados).catch(() => {
+    const extra = JSON.parse(localStorage.getItem('inclure_ongs_extra') || '[]')
+    const idxExtra = extra.findIndex(o => o.id === id)
+    if (idxExtra !== -1) {
+      extra[idxExtra] = { ...extra[idxExtra], ...dados }
+      localStorage.setItem('inclure_ongs_extra', JSON.stringify(extra))
+    } else {
+      const edicoes = JSON.parse(localStorage.getItem('inclure_ongs_edicoes') || '{}')
+      edicoes[id] = { ...(edicoes[id] || {}), ...dados }
+      localStorage.setItem('inclure_ongs_edicoes', JSON.stringify(edicoes))
+    }
+    return localResponse({ ok: true })
+  })
+}
+
 export const deleteOng = (id) => {
   return api.delete(`/ongs/${id}`).catch(() => {
     const base = JSON.parse(localStorage.getItem('inclure_ongs_removidas') || '[]')
@@ -154,7 +194,12 @@ export const deleteOng = (id) => {
 export const getArtigos = () => {
   return api.get('/artigos').catch(() => {
     const extra = JSON.parse(localStorage.getItem('inclure_artigos_extra') || '[]')
-    return localResponse(extra)
+    const edicoes = JSON.parse(localStorage.getItem('inclure_artigos_edicoes') || '{}')
+    const removidos = JSON.parse(localStorage.getItem('inclure_artigos_removidos') || '[]')
+    const base = mockArtigos
+      .filter(a => !removidos.includes(a.id))
+      .map(a => edicoes[a.id] ? { ...a, ...edicoes[a.id] } : a)
+    return localResponse([...base, ...extra])
   })
 }
 
@@ -165,6 +210,22 @@ export const postArtigo = (dados) => {
     extra.push(novo)
     localStorage.setItem('inclure_artigos_extra', JSON.stringify(extra))
     return localResponse(novo)
+  })
+}
+
+export const putArtigo = (id, dados) => {
+  return api.put(`/artigos/${id}`, dados).catch(() => {
+    const extra = JSON.parse(localStorage.getItem('inclure_artigos_extra') || '[]')
+    const idxExtra = extra.findIndex(a => a.id === id)
+    if (idxExtra !== -1) {
+      extra[idxExtra] = { ...extra[idxExtra], ...dados }
+      localStorage.setItem('inclure_artigos_extra', JSON.stringify(extra))
+    } else {
+      const edicoes = JSON.parse(localStorage.getItem('inclure_artigos_edicoes') || '{}')
+      edicoes[id] = { ...(edicoes[id] || {}), ...dados }
+      localStorage.setItem('inclure_artigos_edicoes', JSON.stringify(edicoes))
+    }
+    return localResponse({ ok: true })
   })
 }
 
@@ -186,6 +247,15 @@ export const getDashboard = () => {
     const extraProf = JSON.parse(localStorage.getItem('inclure_profissionais_extra') || '[]')
     const extraOngs = JSON.parse(localStorage.getItem('inclure_ongs_extra') || '[]')
     const extraArtigos = JSON.parse(localStorage.getItem('inclure_artigos_extra') || '[]')
+    const removidosProf = JSON.parse(localStorage.getItem('inclure_profissionais_removidos') || '[]')
+    const removidasOngs = JSON.parse(localStorage.getItem('inclure_ongs_removidas') || '[]')
+    const removidosArt = JSON.parse(localStorage.getItem('inclure_artigos_removidos') || '[]')
+    const val = JSON.parse(localStorage.getItem('inclure_validacoes') || '{}')
+    const totalProf = mockProf.filter(p => !removidosProf.includes(p.id)).length + extraProf.length
+    const totalOngs = mockOngs.filter(o => !removidasOngs.includes(o.id)).length + extraOngs.length
+    const totalArt = mockArtigos.filter(a => !removidosArt.includes(a.id)).length + extraArtigos.length
+    const profValidados = mockProf.filter(p => !removidosProf.includes(p.id) && (val[p.id] !== undefined ? val[p.id] : p.validado)).length
+      + extraProf.filter(p => p.validado).length
     return localResponse({
       totalUsuarios: users.length,
       porTipo: {
@@ -193,10 +263,10 @@ export const getDashboard = () => {
         responsavel: users.filter(u => u.tipo === 'responsavel').length,
         profissional: users.filter(u => u.tipo === 'profissional').length,
       },
-      totalProfissionais: extraProf.length,
-      profissionaisValidados: extraProf.filter(p => p.validado).length,
-      totalOngs: extraOngs.length,
-      totalArtigos: extraArtigos.length,
+      totalProfissionais: totalProf,
+      profissionaisValidados: profValidados,
+      totalOngs: totalOngs,
+      totalArtigos: totalArt,
     })
   })
 }

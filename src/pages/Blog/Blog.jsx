@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { getArtigos, postArtigo, deleteArtigo } from '../../services/api'
+import { getArtigos, postArtigo, putArtigo, deleteArtigo } from '../../services/api'
 import { useAuth } from '../../contexts/AuthContext'
 import lupaImg from '../../assets/lupa.png'
 import filtrarIconImg from '../../assets/imagens-novas/filtrar-icon.png'
 import adcionarIconImg from '../../assets/imagens-novas/adcionar-icon.png'
 import excluirIconImg from '../../assets/imagens-novas/excluir-icon.png'
+import editarIconImg from '../../assets/imagens-novas/editar-icon.png'
 import './Blog.css'
 
 const LIMITE = 4
-const CATEGORIAS = ['Políticas Públicas', 'Pesquisas', 'Neurodivergência', 'Internacional']
+const CATEGORIAS = ['Políticas Públicas', 'Pesquisas', 'Neurodivergência', 'Terapias', 'Internacional']
 const FORM_ARTIGO_INICIAL = { categoria: 'Políticas Públicas', titulo: '', resumo: '', conteudo: '', autor: '', img: '', fontes: '' }
 
 export default function Blog() {
@@ -19,18 +20,27 @@ export default function Blog() {
   const [categ, setCateg] = useState('')
   const [modalArtigo, setModalArtigo] = useState(false)
   const [formArtigo, setFormArtigo] = useState(FORM_ARTIGO_INICIAL)
+  const [editandoId, setEditandoId] = useState(null)
   const [viu, setViu] = useState(false)
   const [loading, setLoading] = useState(true)
+  const [toast, setToast] = useState(null)
   const { isAdmin } = useAuth()
   const navigate = useNavigate()
 
-  useEffect(() => {
+  const showToast = (msg, erro = false) => {
+    setToast({ msg, erro })
+    setTimeout(() => setToast(null), 3000)
+  }
+
+  const recarregar = () => {
     const removidos = JSON.parse(localStorage.getItem('inclure_artigos_removidos') || '[]')
     getArtigos().then(res => {
       const todos = res.data.filter(a => !removidos.includes(a.id))
       setLista(todos); setFiltrados(todos); setLoading(false)
     })
-  }, [])
+  }
+
+  useEffect(() => { recarregar() }, [])
 
   const filtrar = () => {
     const b = busca.toLowerCase()
@@ -47,31 +57,60 @@ export default function Blog() {
     const file = e.target.files[0]
     if (!file) return
     const reader = new FileReader()
-    reader.onload = (ev) => {
-      setFormArtigo(f => ({ ...f, img: ev.target.result }))
-    }
+    reader.onload = (ev) => { setFormArtigo(f => ({ ...f, img: ev.target.result })) }
     reader.readAsDataURL(file)
   }
 
-  const handleAddArtigo = (e) => {
-    e.preventDefault()
-    const payload = {
-      ...formArtigo,
-      data: new Date().toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' }).replace(' de ', ' '),
-      fontes: formArtigo.fontes.split('\n').map(s => s.trim()).filter(s => s)
-    }
-    if (!payload.img) payload.img = 'https://placehold.co/800x200/cccccc/ffffff?text=Capa'
-    postArtigo(payload).then(() => {
-      alert('Artigo adicionado com sucesso!')
-      setModalArtigo(false)
-      setFormArtigo(FORM_ARTIGO_INICIAL)
-      // Recarregar
-      getArtigos().then(res => {
-        const removidos = JSON.parse(localStorage.getItem('inclure_artigos_removidos') || '[]')
-        const todos = res.data.filter(a => !removidos.includes(a.id))
-        setLista(todos); setFiltrados(todos)
-      })
+  const abrirNovo = () => {
+    setFormArtigo(FORM_ARTIGO_INICIAL)
+    setEditandoId(null)
+    setModalArtigo(true)
+  }
+
+  const iniciarEdicao = (artigo) => {
+    setFormArtigo({
+      categoria: artigo.categoria || 'Políticas Públicas',
+      titulo: artigo.titulo || '',
+      resumo: artigo.resumo || '',
+      conteudo: artigo.conteudo || '',
+      autor: artigo.autor || '',
+      img: artigo.img || '',
+      fontes: Array.isArray(artigo.fontes) ? artigo.fontes.join('\n') : (artigo.fontes || ''),
     })
+    setEditandoId(artigo.id)
+    setModalArtigo(true)
+  }
+
+  const fecharModal = () => {
+    setModalArtigo(false)
+    setFormArtigo(FORM_ARTIGO_INICIAL)
+    setEditandoId(null)
+  }
+
+  const handleSubmitArtigo = (e) => {
+    e.preventDefault()
+    const fontesParsed = formArtigo.fontes.split('\n').map(s => s.trim()).filter(s => s)
+    if (editandoId) {
+      const payload = { ...formArtigo, fontes: fontesParsed }
+      if (!payload.img) payload.img = 'https://placehold.co/800x200/cccccc/ffffff?text=Capa'
+      putArtigo(editandoId, payload).then(() => {
+        showToast('Artigo atualizado!')
+        fecharModal()
+        recarregar()
+      })
+    } else {
+      const payload = {
+        ...formArtigo,
+        data: new Date().toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' }).replace(' de ', ' '),
+        fontes: fontesParsed,
+      }
+      if (!payload.img) payload.img = 'https://placehold.co/800x200/cccccc/ffffff?text=Capa'
+      postArtigo(payload).then(() => {
+        showToast('Artigo adicionado!')
+        fecharModal()
+        recarregar()
+      })
+    }
   }
 
   const handleDelete = (id) => {
@@ -85,12 +124,15 @@ export default function Blog() {
     setLista(nova); setFiltrados(nova.filter(a =>
       (!busca || a.titulo.toLowerCase().includes(busca.toLowerCase())) && (!categ || a.categoria === categ)
     ))
+    showToast('Artigo excluído.')
   }
 
   const visiveis = viu ? filtrados : filtrados.slice(0, LIMITE)
 
   return (
     <div className="principal">
+      {toast && <div className={`toast${toast.erro ? ' erro' : ''}`}>{toast.msg}</div>}
+
       <div className="topo">
         <h1 className="titulo-sec">Blog &amp; Pesquisas</h1>
         <p className="subtitulo">Políticas públicas, pesquisas científicas e novidades sobre neurodivergência no Brasil e no mundo</p>
@@ -111,7 +153,7 @@ export default function Blog() {
 
       {isAdmin && (
         <div className="topo-admin-acao">
-          <button className="btn btn-verde" onClick={() => setModalArtigo(true)}><img src={adcionarIconImg} alt="" className="btn-icon" />Adicionar Artigo</button>
+          <button className="btn btn-verde" onClick={abrirNovo}><img src={adcionarIconImg} alt="" className="btn-icon" />Adicionar Artigo</button>
         </div>
       )}
 
@@ -136,6 +178,7 @@ export default function Blog() {
                   </div>
                   {isAdmin && (
                     <div className="admin-btns admin-btns-topo">
+                      <button className="btn-admin-val" onClick={() => iniciarEdicao(b)}><img src={editarIconImg} alt="" className="btn-icon-sm" />Editar</button>
                       <button className="btn-admin-del" onClick={() => handleDelete(b.id)}><img src={excluirIconImg} alt="" className="btn-icon-sm" />Excluir</button>
                     </div>
                   )}
@@ -153,10 +196,10 @@ export default function Blog() {
       )}
 
       {modalArtigo && (
-        <div className="admin-modal-overlay" onClick={e => e.target.className.includes('overlay') && setModalArtigo(false)}>
+        <div className="admin-modal-overlay" onClick={e => e.target.className.includes('overlay') && fecharModal()}>
           <div className="admin-modal">
-            <h3>Adicionar Artigo / Pesquisa</h3>
-            <form onSubmit={handleAddArtigo} className="campos">
+            <h3>{editandoId ? 'Editar Artigo' : 'Adicionar Artigo / Pesquisa'}</h3>
+            <form onSubmit={handleSubmitArtigo} className="campos">
               <select className="campo-input seletor" value={formArtigo.categoria} onChange={e => setFormArtigo(f => ({ ...f, categoria: e.target.value }))} required>
                 {CATEGORIAS.map(c => <option key={c}>{c}</option>)}
               </select>
@@ -165,7 +208,7 @@ export default function Blog() {
               <textarea className="campo-input area-txt area-txt-mini" placeholder="Resumo curto" value={formArtigo.resumo} onChange={e => setFormArtigo(f => ({ ...f, resumo: e.target.value }))} required />
               <textarea className="campo-input area-txt area-txt-grande" placeholder="Conteúdo completo (HTML permitido)" value={formArtigo.conteudo} onChange={e => setFormArtigo(f => ({ ...f, conteudo: e.target.value }))} required />
               <textarea className="campo-input area-txt area-txt-curta" placeholder="Fontes (uma por linha)" value={formArtigo.fontes} onChange={e => setFormArtigo(f => ({ ...f, fontes: e.target.value }))} />
-              
+
               <div className="campo-foto-upload">
                 <label className="label-upload">Imagem de Capa</label>
                 <input type="file" accept="image/*" onChange={handleFotoArtigo} className="campo-input input-arquivo" />
@@ -173,8 +216,11 @@ export default function Blog() {
               </div>
 
               <div className="admin-modal-btns">
-                <button type="button" className="btn btn-cinza" onClick={() => setModalArtigo(false)}>Cancelar</button>
-                <button type="submit" className="btn btn-azul"><img src={adcionarIconImg} alt="" className="btn-icon" />Adicionar Artigo</button>
+                <button type="button" className="btn btn-cinza" onClick={fecharModal}>Cancelar</button>
+                <button type="submit" className="btn btn-azul">
+                  <img src={editandoId ? editarIconImg : adcionarIconImg} alt="" className="btn-icon" />
+                  {editandoId ? 'Salvar Alterações' : 'Adicionar Artigo'}
+                </button>
               </div>
             </form>
           </div>

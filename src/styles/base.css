@@ -1,6 +1,38 @@
 /*====================BASE - Reset e estilos fundamentais====================*/
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap");
+
+:root {
+  /* Colors - Light Theme */
+  --bg-page: #f4f8f4;
+  --bg-card: #ffffff;
+  --bg-navbar: rgba(255, 255, 255, 0.75);
+  --color-text: #1c261c;
+  --color-text-muted: #526252;
+  --border-color: rgba(46, 125, 50, 0.08);
+  --border-color-hover: rgba(46, 125, 50, 0.16);
+  --input-bg: #ffffff;
+  --input-border: rgba(46, 125, 50, 0.15);
+  --input-border-focus: #2e7d32;
+  --input-bg-focus: #ffffff;
+  --primary-green: #2e7d32;
+
+  /* Spacing & Borders */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows (Modern and Subtle) */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.01);
+  --shadow-md: 0 12px 30px -10px rgba(0, 0, 0, 0.04), 0 4px 12px -2px rgba(0, 0, 0, 0.02);
+  --shadow-lg: 0 24px 48px -12px rgba(0, 0, 0, 0.06), 0 8px 20px -6px rgba(0, 0, 0, 0.03);
+
+  /* Transitions (Smooth and responsive) */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 /* ===== Reset ===== */
 * {
@@ -12,22 +44,32 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: "Montserrat", sans-serif;
-  background: #e8f5e9;
-  color: #1a1a1a;
-  transition:
-    background 0.3s,
-    color 0.3s;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background: var(--bg-page);
+  color: var(--color-text);
+  transition: background var(--transition-normal), color var(--transition-normal);
   padding-top: 108px;
   font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 a {
   text-decoration: none;
   color: inherit;
+  transition: color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
 }
 h1,
 h2,
 h3,
 h4 {
+  font-family: "Outfit", sans-serif;
   line-height: 1.25;
+  letter-spacing: -0.015em;
 }
+
+/* Focus outline helper */
+*:focus-visible {
+  outline: 3px solid rgba(46, 125, 50, 0.3);
+  outline-offset: 2px;
+}
+

@@ -179,29 +179,27 @@ export default function Cadastro() {
         <h2>Cadastre-se</h2>
         <form className="campos" onSubmit={handleSubmit}>
 
-          {/* Nome + Data de Nascimento */}
-          <div className="acesso-linha">
-            <input
-              className="campo-input input-flex"
-              type="text"
-              placeholder="Nome completo"
-              value={form.nome}
-              onChange={e => set('nome', e.target.value)}
-              required
-            />
-            <div className="campo-data-wrap">
-              <input
-                className="campo-input input-data"
-                type="date"
-                value={form.dataNascimento}
-                min="1900-01-01"
-                max={maxDate}
-                onChange={e => set('dataNascimento', e.target.value)}
-                required
-                title="Data de nascimento (mínimo 6 anos de idade, a partir de 1900)"
-              />
-            </div>
-          </div>
+          {/* Nome */}
+          <input
+            className="campo-input"
+            type="text"
+            placeholder="Nome completo"
+            value={form.nome}
+            onChange={e => set('nome', e.target.value)}
+            required
+          />
+
+          {/* Data de Nascimento */}
+          <input
+            className="campo-input"
+            type="date"
+            value={form.dataNascimento}
+            min="1900-01-01"
+            max={maxDate}
+            onChange={e => set('dataNascimento', e.target.value)}
+            required
+            title="Data de nascimento (mínimo 6 anos de idade, a partir de 1900)"
+          />
 
           {/* Sexo */}
           <div>

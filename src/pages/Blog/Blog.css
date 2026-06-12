@@ -37,14 +37,15 @@
 /* ==================== FILTROS ==================== */
 .filtro {
   background: #fff;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   padding: 16px 20px;
   display: flex;
   gap: 10px;
   align-items: center;
   margin-bottom: 28px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  box-shadow: var(--shadow-sm);
   flex-wrap: wrap;
+  border: 1px solid #e8ede8;
 }
 .busca {
   position: relative;
@@ -61,6 +62,14 @@
   outline: none;
   color: inherit;
   font-family: inherit;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.busca input:hover {
+  border-color: #fbbf24;
+}
+.busca input:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.15);
 }
 .busca img {
   position: absolute;
@@ -70,6 +79,7 @@
   width: 18px;
   height: 18px;
   pointer-events: none;
+  opacity: 0.7;
 }
 .seletor {
   padding: 10px 14px;
@@ -82,6 +92,14 @@
   color: inherit;
   min-width: 120px;
   font-family: inherit;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.seletor:hover {
+  border-color: #fbbf24;
+}
+.seletor:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.15);
 }
 .btn-filtrar {
   background: #4caf50;
@@ -92,7 +110,7 @@
   font-size: 17px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background var(--transition-fast), transform var(--transition-fast);
   font-family: inherit;
   display: inline-flex;
   justify-content: center;
@@ -101,6 +119,10 @@
 }
 .btn-filtrar:hover {
   background: #388e3c;
+  transform: translateY(-1px);
+}
+.btn-filtrar:active {
+  transform: scale(0.97);
 }
 .btn-limpar {
   background: #9e9e9e;
@@ -111,11 +133,15 @@
   font-size: 17px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background var(--transition-fast), transform var(--transition-fast);
   font-family: inherit;
 }
 .btn-limpar:hover {
   background: #757575;
+  transform: translateY(-1px);
+}
+.btn-limpar:active {
+  transform: scale(0.97);
 }
 .ver-mais {
   text-align: center;
@@ -134,22 +160,34 @@
 }
 .blog-card {
   background: #fff;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
   position: relative;
+  border: 1px solid #e8ede8;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: #a5d6a7;
 }
 .blog-banner {
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
+  background: #f0f5f0;
 }
 .blog-banner img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+.blog-card:hover .blog-banner img {
+  transform: scale(1.04);
 }
 .blog-dados {
   padding: 20px;
@@ -182,6 +220,7 @@
   font-weight: 700;
   margin-bottom: 8px;
   line-height: 1.4;
+  color: #2e7d32;
 }
 .blog-dados p {
   font-size: 17px;
@@ -208,11 +247,14 @@
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background var(--transition-fast), transform var(--transition-fast);
   font-family: inherit;
 }
 .btn-ler:hover {
   background: #1b5e20;
+}
+.btn-ler:active {
+  transform: scale(0.96);
 }
 
 /* ==================== RESPONSIVENESS ==================== */

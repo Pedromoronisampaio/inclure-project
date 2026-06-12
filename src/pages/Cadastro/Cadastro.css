@@ -11,14 +11,20 @@
   font-weight: 600;
   cursor: pointer;
   border: none;
-  transition: 0.2s;
+  transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.btn:active {
+  transform: scale(0.97);
 }
 .btn-verm {
   background: #e53935;
   color: #fff;
+  box-shadow: 0 2px 6px rgba(229, 57, 53, 0.2);
 }
 .btn-verm:hover {
   background: #c62828;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(229, 57, 53, 0.3);
 }
 .btn-submit-full {
   width: 100%;
@@ -35,13 +41,17 @@
   background: #fefde8;
   font-size: 17px;
   outline: none;
-  transition: border-color 0.2s;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
   color: inherit;
   width: 100%;
   font-family: inherit;
 }
+.campo-input:hover {
+  border-color: #fbbf24;
+}
 .campo-input:focus {
   border-color: #4caf50;
+  box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.15);
 }
 input[type="file"].campo-input {
   padding: 0;
@@ -58,7 +68,7 @@ input[type="file"].campo-input::file-selector-button {
   font-weight: 600;
   cursor: pointer;
   font-family: inherit;
-  transition: background 0.2s;
+  transition: background var(--transition-fast);
   margin-right: 12px;
 }
 input[type="file"].campo-input::file-selector-button:hover {
@@ -81,11 +91,13 @@ input[type="file"].campo-input::file-selector-button:hover {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  transition: background 0.2s;
+  transition: background var(--transition-fast), transform var(--transition-fast);
   font-family: inherit;
+  box-shadow: 0 2px 6px rgba(255, 152, 0, 0.2);
 }
 .btn-enviar:hover {
   background: #f57c00;
+  transform: translateY(-1px);
 }
 .btn-enviar img {
   width: 20px;
@@ -121,6 +133,14 @@ input[type="file"].campo-input::file-selector-button:hover {
   color: inherit;
   min-width: 120px;
   font-family: inherit;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.seletor:hover {
+  border-color: #fbbf24;
+}
+.seletor:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.15);
 }
 .seletor-full {
   width: 100%;
@@ -144,6 +164,8 @@ input[type="file"].campo-input::file-selector-button:hover {
   object-fit: cover;
   border-radius: 50%;
   margin-top: 4px;
+  box-shadow: var(--shadow-sm);
+  border: 1.5px solid #fff;
 }
 .label-neuro {
   font-size: 14px;
@@ -169,6 +191,7 @@ input[type="file"].campo-input::file-selector-button:hover {
   position: relative;
   display: flex;
   align-items: center;
+  width: 100%;
 }
 .campo-senha-wrap .campo-input {
   padding-right: 48px;
@@ -186,7 +209,7 @@ input[type="file"].campo-input::file-selector-button:hover {
   width: 28px;
   height: 28px;
   opacity: 0.6;
-  transition: opacity 0.2s;
+  transition: opacity var(--transition-fast);
 }
 .btn-visibilidade:hover {
   opacity: 1;
@@ -208,15 +231,17 @@ input[type="file"].campo-input::file-selector-button:hover {
 }
 .acesso-box {
   background: #fff;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   padding: 36px 32px;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-md);
+  border: 1px solid #e8ede8;
 }
 .acesso-box h2 {
   font-size: 27px;
   font-weight: 700;
   text-align: center;
   margin-bottom: 24px;
+  color: #2e7d32;
 }
 .acesso-linha {
   display: flex;
@@ -258,12 +283,20 @@ input[type="file"].campo-input::file-selector-button:hover {
   justify-content: center;
   gap: 8px;
   font-size: 17px;
-  transition: 0.2s;
+  transition: all var(--transition-fast);
   font-family: inherit;
+}
+.btn-sexo:hover {
+  border-color: #fbbf24;
+  transform: translateY(-1px);
 }
 .btn-sexo.ativo {
   border-color: #4caf50;
   background: #e8f5e9;
+  font-weight: 600;
+}
+.btn-sexo:active {
+  transform: scale(0.97);
 }
 .def {
   margin: 16px 0;
@@ -273,6 +306,7 @@ input[type="file"].campo-input::file-selector-button:hover {
   font-weight: 600;
   text-align: center;
   margin-bottom: 12px;
+  color: #2e7d32;
 }
 .acesso-link {
   text-align: center;
@@ -285,6 +319,11 @@ input[type="file"].campo-input::file-selector-button:hover {
   font-weight: 600;
   text-decoration: underline;
   cursor: pointer;
+  transition: color var(--transition-fast);
+}
+.acesso-link a:hover,
+.acesso-link span:hover {
+  color: #1b5e20;
 }
 .texto-tipos {
   background: #f0f9f0;
@@ -316,7 +355,11 @@ input[type="file"].campo-input::file-selector-button:hover {
   border-radius: 8px;
   border: 1.5px solid #c8e6c9;
   cursor: pointer;
-  transition: 0.2s;
+  transition: all var(--transition-fast);
+}
+.toggle-neuro:hover {
+  background: #f0f9f0;
+  border-color: #4caf50;
 }
 .toggle-neuro input[type="checkbox"] {
   width: 18px;

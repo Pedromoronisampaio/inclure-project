@@ -5,6 +5,7 @@
   color: #b8d4b8;
   margin-top: 40px;
   padding: 48px 24px 24px;
+  transition: background var(--transition-normal);
 }
 .rodape-int {
   max-width: 1200px;
@@ -32,23 +33,25 @@
 }
 .redes-rod {
   display: flex;
-  gap: 10px;
+  gap: 12px;
 }
 .redes-rod a {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  transition: opacity 0.2s;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
 }
 .redes-rod a:hover {
-  opacity: 0.8;
+  transform: translateY(-2px) scale(1.05);
+  background: rgba(255, 255, 255, 0.1);
 }
 .redes-rod img {
-  width: 100%;
-  height: 100%;
+  width: 20px;
+  height: 20px;
   object-fit: contain;
 }
 .col-rod h4 {
@@ -67,12 +70,14 @@
 .col-rod ul li span {
   font-size: 17px;
   color: #8aab8a;
-  transition: color 0.2s;
+  transition: color var(--transition-fast), transform var(--transition-fast);
   cursor: pointer;
+  display: inline-block;
 }
 .col-rod ul li a:hover,
 .col-rod ul li span:hover {
   color: #4caf50;
+  transform: translateX(2px);
 }
 .itens-rod {
   display: flex;
@@ -107,8 +112,18 @@
 }
 
 /* ==================== AVISO DE SAÍDA (MODAL) ==================== */
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideUpModal {
+  from { opacity: 0; transform: scale(0.95) translateY(15px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
 .saida-overlay {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
   position: fixed;
   inset: 0;
   z-index: 4000;
@@ -116,21 +131,23 @@
   align-items: center;
   justify-content: center;
   padding: 24px;
+  animation: fadeInOverlay 0.25s ease-out forwards;
 }
 .saida-modal {
   background: white;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   padding: 36px 32px 28px;
   max-width: 440px;
   width: 100%;
   text-align: center;
-  box-shadow: 0 12px 48px black;
+  box-shadow: var(--shadow-lg);
+  animation: slideUpModal 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 .saida-icone {
   width: 64px;
   height: 64px;
   margin-bottom: 12px;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
 }
 .saida-titulo {
   font-size: 20px;
@@ -147,7 +164,7 @@
 .saida-destino {
   background: #f5f5f5;
   border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   padding: 10px 14px;
   margin-bottom: 24px;
   display: flex;
@@ -176,13 +193,16 @@
 }
 .saida-btn {
   padding: 10px 22px;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   font-size: 15px;
   font-weight: bold;
   font-family: inherit;
   cursor: pointer;
   border: none;
-  transition: background 0.2s, transform 0.15s;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+.saida-btn:active {
+  transform: scale(0.97);
 }
 .saida-btn-cancelar {
   background: #e0e0e0;
@@ -209,5 +229,20 @@
 @media (max-width: 480px) {
   .rodape-int {
     grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .marca-rod .logo-rod {
+    justify-content: center;
+  }
+  .redes-rod {
+    justify-content: center;
+  }
+  .col-rod ul li a:hover,
+  .col-rod ul li span:hover {
+    transform: none;
+  }
+  .rodape-inf {
+    flex-direction: column;
+    text-align: center;
   }
 }
